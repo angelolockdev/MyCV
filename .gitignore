@@ -16,3 +16,8 @@
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
+ProfilRepository.php
+ProjectsRepository.php
+ReseauSocialRepository.php
+ResumeTitleRepository.php
+SkillsRepository.php

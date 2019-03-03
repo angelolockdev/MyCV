@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Bienvenu!{% endblock %}</title>
+        {% block stylesheets %} 
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css"> <!-- Owl Carousel Stylesheet CSS -->
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css"> <!-- Lightbox Stylesheet Css -->
+        <link rel="stylesheet" href="assets/css/lightbox.min.css"> <!-- bootstrap File -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css"> <!-- Custom Main Stylesheet CSS -->
+        <link rel="stylesheet" href="assets/css/style.css"> <!-- OPtion Color Light / Dark -->
+        <link rel="stylesheet" href="assets/css/background-light-0.css"> <!-- Color Option Type ( 4 Color ) -->
+        <link rel="stylesheet" href="assets/css/color-style-0.css">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}
+        <script src="assets/js/jquery-3.2.1.min.js"></script> <!-- Popper JavaScript-->
+        <script src="assets/js/popper.js"></script> <!-- Bootstrap JavaScript-->
+        <script src="assets/js/bootstrap.min.js"></script> <!-- Owl Carousel Plugin JavaScript -->
+        <script src="assets/js/owl.carousel.min.js"></script> <!-- Mixitup Plugin JavaScript -->
+        <script src="assets/js/mixitup.min.js"></script> <!-- Lightbox Plugin JavaScript -->
+        <script src="assets/js/lightbox.min.js"></script>
+        <!--Custom JavaScript for Mego Template-->
+        <script src="assets/js/main.js"></script>
+        {% endblock %}
+    </body>
+</html>

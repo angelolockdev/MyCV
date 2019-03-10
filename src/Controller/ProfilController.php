@@ -10,7 +10,9 @@ namespace App\Controller;
 
 
 use App\Entity\Profil;
+use App\Entity\ReseauSocial;
 use App\Repository\ProfilRepository;
+use App\Repository\ReseauSocialRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,29 +22,37 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProfilController extends AbstractController
 {
     /**
-     * @var EntityManager
-     */
-    private $em;
-    /**
      * @var ProfilRepository
      */
-    private $repository;
+    private $profilRepository;
+    /**
+     * @var ReseauSocialRepository
+     */
+    private $reseauSocialRepository;
 
-    public function __construct(ProfilRepository $repository, ObjectManager $em)
+    public function __construct(ProfilRepository $profilRepository, ReseauSocialRepository $reseauSocialRepository)
     {
-        $this->em = $em;
-        $this->repository = $repository;
+        $this->profilRepository = $profilRepository;
+        $this->reseauSocialRepository = $reseauSocialRepository;
     }
 
     /**
-     * @Route("/")
+     * @Route("/", name="index")
      * @return Response
+     * @internal param ProfilRepository $repository
      */
     public function index():Response{
-        $profil = $this->repository->findAll()[0];
+     //   $em = $this->getDoctrine()->getManager();
+      //  $em->persist($reseauSociaux);
+       // $em->flush();
+        $reseaux = $this->reseauSocialRepository->findByIdProfil(1);
+        dump($reseaux);
+
+        $profil = $this->profilRepository->find(1);
         return $this->render('profil/index.html.twig',
             [
-                'profil'=>$profil
+                'profil'=>$profil,
+                'reseaux'=>$reseaux
             ]);
     }
 }

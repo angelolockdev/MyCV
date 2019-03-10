@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Integer;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProfilRepository")
@@ -19,7 +20,7 @@ class Profil
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $fullName;
+    private $first_name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -56,19 +57,39 @@ class Profil
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $second_name;
+
+    public function __construct()
+    {
+        $this->created_at = new \DateTime();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFullName(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->fullName;
+        return $this->first_name;
     }
 
-    public function setFullName(string $fullName): self
+    public function setFirstName(string $first_name): self
     {
-        $this->fullName = $fullName;
+        $this->first_name = $first_name;
 
         return $this;
     }
@@ -155,5 +176,56 @@ class Profil
         $this->image = $image;
 
         return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getSecondName(): ?string
+    {
+        return $this->second_name;
+    }
+
+    public function setSecondName(string $second_name): self
+    {
+        $this->second_name = $second_name;
+
+        return $this;
+    }
+    public function getFullName(){
+        return $this->getFirstName().' '.$this->getSecondName();
+    }
+
+    public function getAge(): ?string{
+        $naissanceYear = $this->getYear($this->getDateNaissance());
+        $nowYear = $this->getYear(new \DateTime());
+        $retour = $naissanceYear<$nowYear ? ($nowYear-$naissanceYear).' ans' : null;
+        return $retour;
+    }
+    public function getYear(?\DateTimeInterface $date): int
+    {
+        $age = date_parse($date->format('Y-m-d'));
+        return (int) "".$age['year'];
     }
 }

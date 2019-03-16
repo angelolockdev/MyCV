@@ -72,6 +72,16 @@ class Profil
      */
     private $second_name;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $section_description;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $bio2;
+
     public function __construct()
     {
         $this->created_at = new \DateTime();
@@ -227,5 +237,29 @@ class Profil
     {
         $age = date_parse($date->format('Y-m-d'));
         return (int) "".$age['year'];
+    }
+
+    public function getSectionDescription(): ?string
+    {
+        return $this->section_description;
+    }
+
+    public function setSectionDescription(string $section_description): self
+    {
+        $this->section_description = $section_description;
+
+        return $this;
+    }
+
+    public function getBio2(): ?string
+    {
+        return $this->bio2;
+    }
+
+    public function setBio2(string $bio2): self
+    {
+        $this->bio2 = $bio2;
+
+        return $this;
     }
 }

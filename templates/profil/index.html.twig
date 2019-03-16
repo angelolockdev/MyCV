@@ -63,8 +63,6 @@
                         {% for social in reseaux %}
                             <li><a class="tip social-button" href="{{ social.lien }}" ><i class="fa fa-{{ social.reseau }} icon-style"></i></a>
                         {% endfor %}
-                        <li><a class="tip social-button" href="#" title="Youtube"><i class="fa fa-github"></i></a></li>
-
                         <!--<li><a class="tip social-button" href="#" title="Youtube"><i class="fa fa-youtube"></i></a></li>-->
                         <!--<li><a class="tip social-button" href="#" title="last.fm"><i class="fa fa-lastfm"></i></a></li>-->
                         <!--<li><a class="tip social-button" href="#" title="Dribbble"><i class="fa fa-dribbble"></i></a></li>-->
@@ -79,7 +77,7 @@
                     <section class="pt-page pt-page-1" data-id="about_me">
                         <div class="section-title-block">
                             <h2 class="section-title">À propos de moi</h2>
-                            <h5 class="section-description">Artist, Thinker, Creative Doer</h5>
+                            <h5 class="section-description">{{ profil.sectionDescription }}</h5>
                         </div>
 
                         <div class="row">
@@ -90,9 +88,9 @@
                             </div>
                             <div class="col-sm-6 col-md-6 subpage-block">
                                 <div class="general-info">
-                                    <h3>I am Web Developer/Designer @ Company.com</h3>
-                                    <p>Proin laoreet elementum ligula, ac tincidunt lorem accumsan nec. Fusce eget urna ante. Donec massa velit, varius a accumsan ac, tempor iaculis massa. Sed placerat justo sed libero varius vulputate. Ut a mi tempus massa malesuada fermentum.</p>
-                                    <p>Sed eleifend sed nibh nec fringilla. Donec eu cursus sem, vitae tristique ante. Cras pretium rutrum egestas. Integer ultrices libero sed justo vehicula, eget tincidunt tortor tempus. Sed tellus nibh, lobortis ut blandit sed, convallis a mauris.</p>
+                                    <h3>Je suis un Développeur d'Application Web/Mobile.</h3>
+                                    <p>{{ profil.biographie }}</p>
+                                    <p>{{ profil.bio2 }}</p>
                                 </div>
                             </div>
 
@@ -111,7 +109,7 @@
 
                             <div class="col-sm-6 col-md-6 subpage-block">
                                 <div class="block-title">
-                                    <h3>Testimonials</h3>
+                                    <h3>Témoignages</h3>
                                 </div>
                                 <div class="testimonials owl-carousel">
 
@@ -172,7 +170,7 @@
 
                         <!-- Services block -->
                         <div class="block-title">
-                            <h3>Services</h3>
+                            <h3>Mes Services</h3>
                         </div>
 
                         <div class="row">
@@ -181,7 +179,7 @@
                                     <div class="service-info">
                                         <img src="assets/images/service/web_design.png" alt="Responsive Design">
                                         <h4>Web Design</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        <p>Oui, je me préoccupe aussi du <span class="badge badge-light">Design</span>, étant donnée que c'est la première Interface Utilisateur. </p>
                                     </div>
                                 </div>
                             </div>
@@ -190,8 +188,8 @@
                                 <div class="service-block">
                                     <div class="service-info">
                                         <img src="assets/images/service/copywrite.png" alt="Copywriter">
-                                        <h4>Copywriter</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        <h4>Rédacteur publicitaire</h4>
+                                        <p>Rediger des messages publicitaires destinés à promouvoir des produits, des services ou encore une organisation.</p>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +199,7 @@
                                     <div class="service-info">
                                         <img src="assets/images/service/ecommerce.png" alt="E-Commerce">
                                         <h4>E-Commerce</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        <p>Personne ne peut être autonome. Et cela fait ressortir le besoin de demande et d’offre de biens et de services.</p>
                                     </div>
                                 </div>
                             </div>
@@ -210,8 +208,8 @@
                                 <div class="service-block">
                                     <div class="service-info">
                                         <img src="assets/images/service/management.png" alt="Management">
-                                        <h4>Management</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                                        <h4>Conception logicielle</h4>
+                                        <p><span class="badge badge-light">Conception et Développement</span> d’applications d’entreprise, et gestion projet informatique pour des applications Web et N-tiers  .</p>
                                     </div>
                                 </div>
                             </div>
@@ -272,7 +270,7 @@
                                 <div class="fun-fact-block gray-bg">
                                     <i class="pe-7s-icon pe-7s-smile"></i>
                                     <h4>Happy Clients</h4>
-                                    <span class="fun-value">1,024</span>
+                                    <span class="fun-value">3</span>
                                 </div>
                             </div>
 
@@ -280,7 +278,7 @@
                                 <div class="fun-fact-block">
                                     <i class="pe-7s-icon pe-7s-alarm"></i>
                                     <h4>Working Hours</h4>
-                                    <span class="fun-value">6,256</span>
+                                    <span class="fun-value">2,390</span>
                                 </div>
                             </div>
 
@@ -288,7 +286,7 @@
                                 <div class="fun-fact-block gray-bg">
                                     <i class="pe-7s-icon pe-7s-medal"></i>
                                     <h4>Awards Won</h4>
-                                    <span class="fun-value">21</span>
+                                    <span class="fun-value">0</span>
                                 </div>
                             </div>
 
@@ -296,7 +294,7 @@
                                 <div class="fun-fact-block">
                                     <i class="pe-7s-icon pe-7s-coffee"></i>
                                     <h4>Coffee Consumed</h4>
-                                    <span class="fun-value">20,000</span>
+                                    <span class="fun-value">1,000</span>
                                 </div>
                             </div>
                         </div>

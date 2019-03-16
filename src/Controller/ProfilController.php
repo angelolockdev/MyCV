@@ -17,6 +17,7 @@ use App\Repository\ProfilRepository;
 use App\Repository\ReseauSocialRepository;
 use App\Repository\ResumeRepository;
 use App\Repository\ResumeTitleRepository;
+use App\Utils\UtilsCV;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -72,17 +73,53 @@ class ProfilController extends AbstractController
         $reseaux = $this->reseauSocialRepository->findByIdProfil(1);
         dump($reseaux);
         //Avoir tous les Resumés
+        $resume = new Resume();
+        $resumeTitle = new ResumeTitle();
         $resume = $this->resumeRepository->find(1);
         $resumeTitle = $this->resumeTitleRepository->find(1);
         dump($resumeTitle);
         dump($resume);
         $profil = $this->profilRepository->find(1);
+        $allResumeTitle = $this->resumeTitleRepository->findAll();
+        //$allResume = $this->resumeRepository->findAll();
+        $allResume = $this->convertToAssociatedArray();
+        dump($allResume[1]);
+
         return $this->render('profil/index.html.twig',
             [
                 'profil'=>$profil,
                 'reseaux'=>$reseaux,
+                'allResumeTitle' =>$allResumeTitle,
+                'allResume' =>$allResume,
                 'resumeTitle'=>$resumeTitle,
                 'resume'=>$resume
             ]);
+    }
+
+    /**
+     * @return array
+     * @internal param ResumeTitle|ResumeTitle[] $listResumeTitle
+     * @internal param Resume|Resume[] $listResume
+     */
+    public function convertToAssociatedArray(){
+        $listResumeTitle = $this->resumeTitleRepository->findAll();
+        $listResume = $this->resumeRepository->findAll();
+        $ret = [];
+        $compteur = 0;
+        foreach($listResumeTitle as $resumeTitleTemp)
+        {
+            $tabKeyValue = [];
+            foreach ($listResume as $resumeTemp){
+                if($resumeTitleTemp->getId() === $resumeTemp->getIdResumeTitle()){
+                    $tabKeyValue[$compteur] = $resumeTemp;                  //Tableau associé à clé - valeur
+                    $ret[$resumeTitleTemp->getId()] = [
+                        'key'=>$resumeTitleTemp,
+                        'value'=>$tabKeyValue
+                    ];      //Tableau normale contenant le tableau associative
+                    $compteur++;
+                }
+            }
+        }
+        return $ret;
     }
 }

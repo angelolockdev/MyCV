@@ -346,63 +346,39 @@
                 <h2>Resume</h2>
             </div>
             <div class="container ex-container">
-                <div class="work-experiense">
-                    <!-- Start Work Experiense -->
+                {% for titles in allResumeTitle %}
+                <div class="{{ titles.class }}">
+                    <!-- Start Dynamic resume -->
                     <div class="ex-block mb-head ex-block-right">
                         <div class="marker-head"><i class="fa fa-briefcase"></i></div>
                         <div class="ex-content b-r">
-                            <h3>Work Experience</h3>
+                            <h3>{{ titles.title }}</h3>
                         </div>
                     </div>
-                    <div class="ex-block ex-block-left">
-                        <div class="marker"></div>
-                        <div class="ex-content ex-shadow">
-                            <h4>{{ resumeTitle.title }}</h4> <span>{{ resume.beginDate }} - {{ resume.endDate }}</span>
-                            <p> {{ resume.details }}</p>
+                    {% set direction = 0 %}
+                    {% for resume in allResume[titles.id]['value'] %}
+                        {% if direction == 0 %}
+                        <div class="ex-block ex-block-left">
+                            <div class="marker"></div>
+                            <div class="ex-content ex-shadow">
+                                <h4>{{ resume.projectName }}</h4> <span>{{ resume.displayMonthYear(resume.beginDate) }} - {{ resume.displayMonthYear(resume.endDate) }}</span>
+                                <p> {{ resume.details }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ex-block ex-block-right">
-                        <div class="marker"></div>
-                        <div class="ex-content ex-shadow b-r">
-                            <h4>Font End Developer - Facebook Inc</h4> <span>January-April 2017</span>
-                            <p> Believe it or not its just me. Texas tea. Come and knock on our door. We've been
-                                waiting for you where are herhers and his. Three's company too. </p>
+                        {% set direction = 1 %}
+                        {% else %}
+                        <div class="ex-block ex-block-right">
+                            <div class="marker"></div>
+                            <div class="ex-content ex-shadow b-r">
+                                <h4>{{ resume.projectName }}</h4> <span>{{ resume.displayMonthYear(resume.beginDate) }} - {{ resume.displayMonthYear(resume.endDate) }}</span>
+                                <p> {{ resume.details }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ex-block ex-block-left">
-                        <div class="marker"></div>
-                        <div class="ex-content ex-shadow">
-                            <h4>Web Designer - Google Inc</h4> <span>June 2014 - September 2016</span>
-                            <p> Believe it or not its just me. Texas tea. Come and knock on our door. We've been
-                                waiting for you where are herhers and his. Three's company too. </p>
-                        </div>
-                    </div>
-                </div> <!-- End Work Experiense -->
-                <div class="education">
-                    <!-- Start Education -->
-                    <div class="ex-block mb-head mt-head ex-block-right">
-                        <div class="marker-head"><i class="fa fa-graduation-cap"></i></div>
-                        <div class="ex-content b-r">
-                            <h3>Education</h3>
-                        </div>
-                    </div>
-                    <div class="ex-block ex-block-left">
-                        <div class="marker"></div>
-                        <div class="ex-content ex-shadow">
-                            <h4>High School</h4> <span>June 2014 - September 2016</span>
-                            <p> Believe it or not its just me. Texas tea. Come and knock on our door. We've been
-                                waiting for you where are herhers and his. Three's company too. </p>
-                        </div>
-                    </div>
-                    <div class="ex-block ex-block-right">
-                        <div class="marker"></div>
-                        <div class="ex-content ex-shadow b-r">
-                            <h4>IT Academy</h4> <span>January-April 2017</span>
-                            <p> Believe it or not its just me. Texas tea. Come and knock on our door. We've been
-                                waiting for you where are herhers and his. Three's company too. </p>
-                        </div>
-                    </div>
-                </div> <!-- End Education -->
+                        {% set direction = 0 %}
+                        {% endif %}
+                    {% endfor %}
+                </div> <!-- End Dynamic resume -->
+                {% endfor %}
             </div>
         </section>
         <!--=========== End Resume Section ============-->

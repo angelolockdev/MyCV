@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Utils\UtilsCV;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -104,5 +105,14 @@ class Resume
         $this->details = $details;
 
         return $this;
+    }
+    public function convertToString(?\DateTimeInterface $dateTime): ?string{
+        $ret = date_parse($dateTime->format('d-m-Y'));
+        $retour = $ret['day']."-".$ret['month']."-".$ret['year'];
+        return $retour;
+    }
+    public function displayMonthYear(?\DateTimeInterface $dateTime): ?string{
+        $funct = new UtilsCV();
+        return $funct->displayMonthYear($dateTime);
     }
 }

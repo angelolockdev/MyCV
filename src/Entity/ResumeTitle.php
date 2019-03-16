@@ -26,6 +26,11 @@ class ResumeTitle
      */
     private $title;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $class;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class ResumeTitle
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getClass(): ?string
+    {
+        return $this->class;
+    }
+
+    public function setClass(string $class): self
+    {
+        $this->class = $class;
 
         return $this;
     }

@@ -2,30 +2,49 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="description" content="Angelo - CV" />
+        <meta name="keywords" content="Angelo, lock, hang, lock to" />
+        <meta name="author" content="angelo-lock" />
         <title>{% block title %}Bienvenu!{% endblock %}</title>
-        {% block stylesheets %} 
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css"> <!-- Owl Carousel Stylesheet CSS -->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css"> <!-- Lightbox Stylesheet Css -->
-        <link rel="stylesheet" href="assets/css/lightbox.min.css"> <!-- bootstrap File -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css"> <!-- Custom Main Stylesheet CSS -->
-        <link rel="stylesheet" href="assets/css/style.css"> <!-- OPtion Color Light / Dark -->
-        <link rel="stylesheet" href="assets/css/background-light-0.css"> <!-- Color Option Type ( 4 Color ) -->
-        <link rel="stylesheet" href="assets/css/color-style-0.css">
+        {% block stylesheets %}
+            <link rel="shortcut icon" href="assets/favicon.ico">
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/normalize.css">
+            <link rel="stylesheet" href="assets/css/transition-animations.css">
+            <link rel="stylesheet" href="assets/css/owl.carousel.css">
+            <link rel="stylesheet" href="assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="assets/css/animate.css">
+            <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+
+            <!-- This styles needs for demo -->
+            <link rel="stylesheet" href="assets/preview/lmpixels-demo-panel.css" type="text/css">
+            <!-- /This styles needs for demo -->
+
+            <script src="assets/js/jquery-2.1.3.min.js"></script>
+            <script src="assets/js/modernizr.custom.js"></script>
+
+            <script src='assets/recaptcha/api.js'></script>
         {% endblock %}
     </head>
     <body>
-        <div class="">
-            {% block body %}{% endblock %}
-        </div>
+
+        {% block body %}{% endblock %}
         {% block javascripts %}
-        <script src="assets/js/jquery-3.2.1.min.js"></script> <!-- Popper JavaScript-->
-        <script src="assets/js/popper.js"></script> <!-- Bootstrap JavaScript-->
-        <script src="assets/js/bootstrap.min.js"></script> <!-- Owl Carousel Plugin JavaScript -->
-        <script src="assets/js/owl.carousel.min.js"></script> <!-- Mixitup Plugin JavaScript -->
-        <script src="assets/js/mixitup.min.js"></script> <!-- Lightbox Plugin JavaScript -->
-        <script src="assets/js/lightbox.min.js"></script>
-        <!--Custom JavaScript for Mego Template-->
-        <script src="assets/js/main.js"></script>
+            <script data-cfasync="false" src="assets/cloudflare-static/email-decode.min.js"></script><script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/page-transition.js"></script>
+            <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+            <script src="assets/js/validator.js"></script>
+            <script src="assets/js/jquery.shuffle.min.js"></script>
+            <script src="assets/js/masonry.pkgd.min.js"></script>
+            <script src="assets/js/owl.carousel.min.js"></script>
+            <script src="assets/js/jquery.magnific-popup.min.js"></script>
+            <script src="assets/js/jquery.hoverdir.js"></script>
+            <script src="assets/js/main.js"></script>
+
+            <!-- Demo Color changer Script -->
+            <script src="assets/preview/lmpixels-demo-panel.js"></script>
+            <!-- /Demo Color changer Script -->
         {% endblock %}
     </body>
 </html>

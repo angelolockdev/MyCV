@@ -31,6 +31,11 @@ class Skills
      */
     private $value;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $categorie;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,18 @@ class Skills
     public function setValue(int $value): self
     {
         $this->value = $value;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?int
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(int $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }

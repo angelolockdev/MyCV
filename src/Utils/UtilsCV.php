@@ -59,6 +59,10 @@ class UtilsCV
         }
         return $ret;
     }
-
+    public static function getYearByDate(?\DateTimeInterface $date): int
+    {
+        $age = date_parse($date->format('Y-m-d'));
+        return (int) "".$age['year'];
+    }
 
 }

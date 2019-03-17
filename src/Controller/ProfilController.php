@@ -17,6 +17,7 @@ use App\Repository\ProfilRepository;
 use App\Repository\ReseauSocialRepository;
 use App\Repository\ResumeRepository;
 use App\Repository\ResumeTitleRepository;
+use App\Repository\SkillsRepository;
 use App\Utils\UtilsCV;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManager;
@@ -42,13 +43,18 @@ class ProfilController extends AbstractController
      * @var ResumeRepository
      */
     private $resumeRepository;
+    /**
+     * @var SkillsRepository
+     */
+    private $skillsRepository;
 
-    public function __construct(ProfilRepository $profilRepository, ReseauSocialRepository $reseauSocialRepository, ResumeTitleRepository $resumeTitleRepository, ResumeRepository $resumeRepository)
+    public function __construct(ProfilRepository $profilRepository, SkillsRepository $skillsRepository, ReseauSocialRepository $reseauSocialRepository, ResumeTitleRepository $resumeTitleRepository, ResumeRepository $resumeRepository)
     {
         $this->profilRepository = $profilRepository;
         $this->reseauSocialRepository = $reseauSocialRepository;
         $this->resumeTitleRepository = $resumeTitleRepository;
         $this->resumeRepository = $resumeRepository;
+        $this->skillsRepository = $skillsRepository;
     }
 
     /**
@@ -77,13 +83,12 @@ class ProfilController extends AbstractController
         $resumeTitle = new ResumeTitle();
         $resume = $this->resumeRepository->find(1);
         $resumeTitle = $this->resumeTitleRepository->find(1);
-        dump($resumeTitle);
-        dump($resume);
         $profil = $this->profilRepository->find(1);
         $allResumeTitle = $this->resumeTitleRepository->findAll();
+        $allSkills = $this->skillsRepository->findAll();
+        dump($allSkills);
         //$allResume = $this->resumeRepository->findAll();
         $allResume = $this->convertToAssociatedArray();
-        dump($allResume[1]);
 
         return $this->render('profil/index.html.twig',
             [
@@ -92,7 +97,8 @@ class ProfilController extends AbstractController
                 'allResumeTitle' =>$allResumeTitle,
                 'allResume' =>$allResume,
                 'resumeTitle'=>$resumeTitle,
-                'resume'=>$resume
+                'resume'=>$resume,
+                'allskills'=>$allSkills
             ]);
     }
 

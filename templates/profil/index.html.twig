@@ -61,7 +61,7 @@
                     <!-- Social buttons -->
                     <ul class="social-links">
                         {% for social in reseaux %}
-                            <li><a class="tip social-button" href="{{ social.lien }}" ><i class="fa fa-{{ social.reseau }} icon-style"></i></a>
+                            <li><a class="tip social-button" href="{{ social.lien }}" target="_blank"><i class="fa fa-{{ social.reseau }} icon-style"></i></a>
                         {% endfor %}
                         <!--<li><a class="tip social-button" href="#" title="Youtube"><i class="fa fa-youtube"></i></a></li>-->
                         <!--<li><a class="tip social-button" href="#" title="last.fm"><i class="fa fa-lastfm"></i></a></li>-->
@@ -109,60 +109,19 @@
 
                             <div class="col-sm-6 col-md-6 subpage-block">
                                 <div class="block-title">
-                                    <h3>Témoignages</h3>
+                                    <h3>Informations personnel</h3>
                                 </div>
-                                <div class="testimonials owl-carousel">
-
+                                <div class="testimonials">
                                     <!-- Testimonial 1 -->
-                                    <div class="testimonial-item">
-                                        <!-- Testimonial Content -->
-                                        <div class="testimonial-content">
-                                            <div class="testimonial-text">
-                                                <p>"Proin auctor pulvinar tellus, et venenatis ligula pharetra eu. Duis dictum nisi sed pellentesque euismod."</p>
-                                            </div>
-                                        </div>
-                                        <!-- /Testimonial Content -->
-                                        <!-- Testimonial Author -->
-                                        <div class="testimonial-credits">
-                                            <!-- Picture -->
-                                            <div class="testimonial-picture">
-                                                <img src="assets/images/testimonials/testimonial_photo_1.png" alt="">
-                                            </div>
-                                            <!-- /Picture -->
-                                            <!-- Testimonial author information -->
-                                            <div class="testimonial-author-info">
-                                                <p class="testimonial-author">John Doe</p>
-                                                <p class="testimonial-firm">Apple Inc.</p>
-                                            </div>
-                                        </div>
-                                        <!-- /Testimonial author information -->
-                                    </div>
+                                    <ul class="info-list">
+                                        <li><span class="title">Age: </span><span class="value">{{ profil.age }}</span></li>
+                                        <li><span class="title">Adresse: </span><span class="value">{{ profil.adresse }}</span></li>
+                                        <li><span class="title">e-mail: </span><span class="value"><a href="mailto: {{ profil.email }}"><span class="__cf_email__" >{{ profil.email }}</span></a></span></li>
+                                        <li><span class="title">Télephone: </span><span class="value">{{ profil.telephone }}</span></li>
+                                        <li><span class="title">Freelance: </span><span class="value available badge badge-primary">Disponible</span></li>
+                                    </ul>
                                     <!-- End of Testimonial 1 -->
-
                                     <!-- Testimonial 2 -->
-                                    <div class="testimonial-item">
-                                        <!-- Testimonial Content -->
-                                        <div class="testimonial-content">
-                                            <div class="testimonial-text">
-                                                <p>"Vivamus porta dapibus tristique. Suspendisse et arcu eget nisi convallis eleifend nec ac lorem."</p>
-                                            </div>
-                                        </div>
-                                        <!-- /Testimonial Content -->
-                                        <!-- Testimonial Author -->
-                                        <div class="testimonial-credits">
-                                            <!-- Picture -->
-                                            <div class="testimonial-picture">
-                                                <img src="assets/images/testimonials/testimonila_photo_2.png" alt="">
-                                            </div>
-                                            <!-- /Picture -->
-                                            <!-- Testimonial author information -->
-                                            <div class="testimonial-author-info">
-                                                <p class="testimonial-author">Bryan Morris</p>
-                                                <p class="testimonial-firm">Sun Foods</p>
-                                            </div>
-                                        </div>
-                                        <!-- /Testimonial author information -->
-                                    </div>
                                     <!-- End of Testimonial 2 -->
                                 </div>
                             </div>
@@ -306,124 +265,68 @@
                     <section class="pt-page pt-page-2" data-id="resume">
                         <div class="section-title-block">
                             <h2 class="section-title">Resume</h2>
-                            <h5 class="section-description">6 Years of Experience</h5>
+                            <h5 class="section-description">{{ profil.experiences }}  Ans  d'Experiences</h5>
                         </div>
 
                         <div class="row">
-                            <div class="col-sm-6 col-md-4 subpage-block">
-                                <div class="block-title">
-                                    <h3>Education</h3>
-                                </div>
-                                <div class="timeline">
-                                    <!-- Single event -->
-                                    <div class="timeline-event te-primary">
-                                        <h5 class="event-date">2010</h5>
-                                        <h4 class="event-name">Specialization Course</h4>
-                                        <span class="event-description">University of Studies</span>
-                                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
+                            {% for titles in allResumeTitle %}
+                                <div class="col-sm-6 col-md-4 subpage-block">
+                                    <div class="block-title">
+                                        <h3>{{ titles.title }}</h3>
                                     </div>
-                                    <!-- Single event -->
-                                    <div class="timeline-event te-primary">
-                                        <h5 class="event-date">2009</h5>
-                                        <h4 class="event-name">Specialization Course</h4>
-                                        <span class="event-description">University of Studies</span>
-                                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
-                                    </div>
-                                    <!-- Single event -->
-                                    <div class="timeline-event te-primary">
-                                        <h5 class="event-date">2008</h5>
-                                        <h4 class="event-name">Specialization Course</h4>
-                                        <span class="event-description">University of Studies</span>
-                                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
+                                    <div class="timeline">
+                                        <!-- Single event -->
+                                        {% for resume in allResume[titles.id]['value'] %}
+                                            <div class="timeline-event te-primary">
+                                                <h5 class="event-date">{{ resume.displayMonthYear(resume.beginDate) }} - {{ resume.displayMonthYear(resume.endDate) }}</h5>
+                                                <h4 class="event-name">{{ resume.projectName }}</h4>
+                                                {% if titles.id == 1 %}
+                                                    <span class="event-description">__</span>
+                                                {% else %}
+                                                    <span class="event-description">Université d'études</span>
+                                                {% endif %}
+                                                <p>{{ resume.details }}</p>
+                                            </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
-                            </div>
+                            {% endfor %}
 
                             <div class="col-sm-6 col-md-4 subpage-block">
                                 <div class="block-title">
-                                    <h3>Experience</h3>
-                                </div>
-                                <div class="timeline">
-                                    <!-- Single event -->
-                                    <div class="timeline-event te-primary">
-                                        <h5 class="event-date">Dec 2012 - Current</h5>
-                                        <h4 class="event-name">Frontend-developer</h4>
-                                        <span class="event-description">Web Agency</span>
-                                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
-                                    </div>
-                                    <!-- Single event -->
-                                    <div class="timeline-event te-primary">
-                                        <h5 class="event-date">Dec 2011 - Nov 2012</h5>
-                                        <h4 class="event-name">Web Designer</h4>
-                                        <span class="event-description">Apple Inc.</span>
-                                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
-                                    </div>
-                                    <!-- Single event -->
-                                    <div class="timeline-event te-primary">
-                                        <h5 class="event-date">Jan 2010 - Dec 2011</h5>
-                                        <h4 class="event-name">Graphic Designer</h4>
-                                        <span class="event-description">Web Agency</span>
-                                        <p>Mauris magna sapien, pharetra consectetur fringilla vitae, interdum sed tortor.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-md-4 subpage-block">
-                                <div class="block-title">
-                                    <h3>Design Skills</h3>
+                                    <h3>Compétences générale</h3>
                                 </div>
                                 <div class="skills-info">
-                                    <h4>Web Design</h4>
-                                    <div class="skill-container">
-                                        <div class="skill-percentage skill-1"></div>
-                                    </div>
+                                    {% for skill in allskills %}
+                                        {% if skill.categorie==1 %}
+                                        <h4>{{ skill.designation }}</h4>
+                                        <div class="skill-container">
+                                            <div class="skill-percentage skill-{{ skill.value }}"></div>
+                                        </div>
+                                        {% endif %}
+                                    {% endfor %}
 
-                                    <h4>Graphic Design</h4>
-                                    <div class="skill-container">
-                                        <div class="skill-percentage skill-2"></div>
-                                    </div>
-
-                                    <h4>Print Design</h4>
-                                    <div class="skill-container">
-                                        <div class="skill-percentage skill-3"></div>
-                                    </div>
                                 </div>
 
                                 <div class="block-title">
-                                    <h3>Coding Skills</h3>
+                                    <h3>Compétences de codage</h3>
                                 </div>
                                 <div class="skills-info">
-                                    <h4>HML5</h4>
-                                    <div class="skill-container">
-                                        <div class="skill-percentage skill-4"></div>
-                                    </div>
-
-                                    <h4>CSS3</h4>
-                                    <div class="skill-container">
-                                        <div class="skill-percentage skill-5"></div>
-                                    </div>
-
-                                    <h4>jQuery</h4>
-                                    <div class="skill-container">
-                                        <div class="skill-percentage skill-6"></div>
-                                    </div>
-
-                                    <h4>Wordpress</h4>
-                                    <div class="skill-container">
-                                        <div class="skill-percentage skill-7"></div>
-                                    </div>
-
-                                    <h4>PHP</h4>
-                                    <div class="skill-container">
-                                        <div class="skill-percentage skill-8"></div>
-                                    </div>
+                                    {% for skill in allskills %}
+                                        {% if skill.categorie==2 %}
+                                            <h4>{{ skill.designation }}</h4>
+                                            <div class="skill-container">
+                                                <div class="skill-percentage skill-{{ skill.value }}"></div>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12 col-md-12">
                                 <div class="download-cv-block">
-                                    <a class="button" target="_blank" href="#">Download CV</a>
+                                    <a class="button" target="_blank" href="/cv/CV.pdf">Télécharger CV</a>
                                 </div>
                             </div>
                         </div>
@@ -434,7 +337,7 @@
                     <!-- Portfolio Subpage -->
                     <section class="pt-page pt-page-3" data-id="portfolio">
                         <div class="section-title-block">
-                            <h2 class="section-title">Portfolio</h2>
+                            <h2 class="section-title">Portefeuille</h2>
                             <h5 class="section-description">My Best Works</h5>
                         </div>
 

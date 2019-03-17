@@ -115,4 +115,5 @@ class Resume
         $funct = new UtilsCV();
         return $funct->displayMonthYear($dateTime);
     }
+
 }

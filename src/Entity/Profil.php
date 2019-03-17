@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Utils\UtilsCV;
 use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\Types\Integer;
 
@@ -261,5 +262,10 @@ class Profil
         $this->bio2 = $bio2;
 
         return $this;
+    }
+    public function experiences(){
+        $nowYear = $this->getYear(new \DateTime());
+        $ret = $nowYear - 2018;
+        return $ret;
     }
 }

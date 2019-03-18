@@ -13,6 +13,7 @@ use App\Entity\Profil;
 use App\Entity\ReseauSocial;
 use App\Entity\Resume;
 use App\Entity\ResumeTitle;
+use App\Entity\Skills;
 use App\Repository\ProfilRepository;
 use App\Repository\ReseauSocialRepository;
 use App\Repository\ResumeRepository;
@@ -48,14 +49,6 @@ class ProfilController extends AbstractController
      */
     private $skillsRepository;
 
-    public function __construct(SkillsRepository $skillsRepository,ProfilRepository $profilRepository,  ReseauSocialRepository $reseauSocialRepository, ResumeTitleRepository $resumeTitleRepository, ResumeRepository $resumeRepository)
-    {
-        $this->profilRepository = $profilRepository;
-        $this->reseauSocialRepository = $reseauSocialRepository;
-        $this->resumeTitleRepository = $resumeTitleRepository;
-        $this->resumeRepository = $resumeRepository;
-        $this->skillsRepository = $skillsRepository;
-    }
 
     /**
      * @Route("/", name="index")
@@ -63,6 +56,11 @@ class ProfilController extends AbstractController
      * @internal param ProfilRepository $repository
      */
     public function index():Response{
+        $this->profilRepository = $this->getDoctrine()->getRepository(Profil::class);
+        $this->skillsRepository = $this->getDoctrine()->getRepository(Skills::class);
+        $this->resumeTitleRepository = $this->getDoctrine()->getRepository(ResumeTitle::class);
+        $this->resumeRepository = $this->getDoctrine()->getRepository(Resume::class);
+        $this->reseauSocialRepository = $this->getDoctrine()->getRepository(ReseauSocial::class);
        $em = $this->getDoctrine()->getManager();
        /* $resumeP = new Resume();
 

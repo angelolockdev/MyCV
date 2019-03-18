@@ -48,7 +48,7 @@ class ProfilController extends AbstractController
      */
     private $skillsRepository;
 
-    public function __construct(ProfilRepository $profilRepository, SkillsRepository $skillsRepository, ReseauSocialRepository $reseauSocialRepository, ResumeTitleRepository $resumeTitleRepository, ResumeRepository $resumeRepository)
+    public function __construct(SkillsRepository $skillsRepository,ProfilRepository $profilRepository,  ReseauSocialRepository $reseauSocialRepository, ResumeTitleRepository $resumeTitleRepository, ResumeRepository $resumeRepository)
     {
         $this->profilRepository = $profilRepository;
         $this->reseauSocialRepository = $reseauSocialRepository;

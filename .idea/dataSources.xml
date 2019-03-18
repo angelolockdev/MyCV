@@ -15,5 +15,14 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="d2hn4b5mdifrrt@ec2-23-23-241-119.compute-1.amazonaws.com" uuid="0c18fb9a-f4e8-4854-9c07-b06157338f12">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-23-23-241-119.compute-1.amazonaws.com:5432/d2hn4b5mdifrrt?sslmode=require</jdbc-url>
+      <driver-properties>
+        <property name="ApplicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>

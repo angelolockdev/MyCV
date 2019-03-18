@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="d2hn4b5mdifrrt@ec2-23-23-241-119.compute-1.amazonaws.com">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>12938</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="equivalence_db_1">
+      <ObjectId>26937</ObjectId>
+    </database>
+    <database id="4" parent="1" name="equivalenceDB2">
+      <ObjectId>36140</ObjectId>
+    </database>
+    <database id="5" parent="1" name="equivalenceFopDB">
+      <ObjectId>36484</ObjectId>
+    </database>
+    <database id="6" parent="1" name="equivalenceFopDB2">
+      <ObjectId>36928</ObjectId>
+    </database>
+    <database id="7" parent="1" name="equivalenceDGFOP1">
+      <ObjectId>37187</ObjectId>
+    </database>
+    <database id="8" parent="1" name="testDB">
+      <ObjectId>37491</ObjectId>
+    </database>
+    <database id="9" parent="1" name="LMD1">
+      <ObjectId>37706</ObjectId>
+    </database>
+    <database id="10" parent="1" name="Sf4">
+      <ObjectId>38063</ObjectId>
+    </database>
+    <schema id="11" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2019-03-18.13:44:34.479</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="12" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="information_schema">
+      <ObjectId>12648</ObjectId>
+    </schema>
+  </database-model>
+</dataSource>

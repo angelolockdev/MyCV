@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2cff7675-b5ca-42fd-a758-603c86434d0a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,12 +25,12 @@
     <expand>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="mycv@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="d2hn4b5mdifrrt@ec2-23-23-241-119.compute-1.amazonaws.com" type="e3449647:DbNodeDescriptor" />
       </path>
       <path>
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="mycv@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="mycv" type="e3449647:DbNodeDescriptor" />
+        <item name="d2hn4b5mdifrrt@ec2-23-23-241-119.compute-1.amazonaws.com" type="e3449647:DbNodeDescriptor" />
+        <item name="postgres" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
     <select />
@@ -69,8 +72,8 @@
       <file leaf-file-name=".env" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="34" column="10" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="10" />
+            <state relative-caret-position="421">
+              <caret line="26" column="202" lean-forward="false" selection-start-line="26" selection-start-column="202" selection-end-line="26" selection-end-column="202" />
               <folding />
             </state>
           </provider>
@@ -147,8 +150,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="856" />
-    <option name="y" value="-17" />
+    <option name="x" value="952" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
   </component>
@@ -238,7 +240,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL&#10;MySQL" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/Repository/ProjectsRepository.php&#10;E:/Downloading/Tuto/Symfony/WorkSpace2/demo/src/Repository/ReseauSocialRepository.php&#10;true&#10;E:/Downloading/Tuto/Symfony/WorkSpace2/demo/src/Repository/ProfilRepository.php&#10;E:/Downloading/Tuto/Symfony/WorkSpace2/demo/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
@@ -355,16 +357,15 @@
       <workItem from="1552470850781" duration="8521000" />
       <workItem from="1552718261851" duration="29665000" />
       <workItem from="1552883292148" duration="2748000" />
-      <workItem from="1552902343727" duration="2566000" />
+      <workItem from="1552902343727" duration="6324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60140000" />
+    <option name="totallyTimeSpent" value="63898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -378,8 +379,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10580021" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.69065523" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2188889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12889366" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -409,13 +410,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/blog/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11544">
-          <caret line="481" column="14" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="481" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/blog/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -647,7 +641,7 @@
         <state relative-caret-position="561">
           <caret line="268" column="19" lean-forward="false" selection-start-line="268" selection-start-column="19" selection-end-line="268" selection-end-column="19" />
           <folding>
-            <element signature="e#30#52#0#PHP" expanded="true" />
+            <element signature="e#30#52#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -758,10 +752,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0c18fb9a-f4e8-4854-9c07-b06157338f12/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="34" column="10" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="10" />
+        <state relative-caret-position="421">
+          <caret line="26" column="202" lean-forward="false" selection-start-line="26" selection-start-column="202" selection-end-line="26" selection-end-column="202" />
           <folding />
         </state>
       </provider>

@@ -12,7 +12,7 @@
       <introspection-schemas>*:mycv</introspection-schemas>
     </data-source>
     <data-source name="d2hn4b5mdifrrt@ec2-23-23-241-119.compute-1.amazonaws.com" uuid="0c18fb9a-f4e8-4854-9c07-b06157338f12">
-      <database-info product="PostgreSQL" version="11.2 (Ubuntu 11.2-1.pgdg16.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
+      <database-info product="PostgreSQL" version="10.4" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />

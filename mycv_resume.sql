@@ -1,0 +1,3 @@
+INSERT INTO mycv.resume (id_resume_title, project_name, begin_date, end_date, details) VALUES (1, 'Stagiaire 3 mois - Ministère FOP 67Ha"', '2018-08-06 00:00:00', '2018-11-01 00:00:00', 'Les services des équivalences dans la MFPTLS, ont besoin d''informatiser leurs services. D''où la mise en place d''une logiciel de qui gère les arrêtés d''équivalences');
+INSERT INTO mycv.resume (id_resume_title, project_name, begin_date, end_date, details) VALUES (2, 'Formations qualifiante - INTH', '2018-12-17 11:16:42', '2019-06-12 11:16:58', 'Je suis un barman , i''m a Bartender.');
+INSERT INTO mycv.resume (id_resume_title, project_name, begin_date, end_date, details) VALUES (1, 'Stage 4 mois - Inconnu', '2018-05-18 11:18:15', '2018-09-21 11:18:22', 'Rien à signaler.');
